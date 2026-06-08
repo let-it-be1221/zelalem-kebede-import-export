@@ -52,3 +52,15 @@ prompt
 server.log
 # Skills directory
 /skills/
+
+# Z scripts and dev config
+.zscripts/
+.z-ai-config
+.claude
+worklog.md
+
+# Download directory (generated files)
+/download/
+
+# Mini services
+/mini-services/
