@@ -1,42 +1,31 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Handshake } from "lucide-react";
 
 const partners = [
-  { name: "XCMG", domain: "xcmg.com" },
-  { name: "Sinotruk", domain: "sinotruk.com" },
-  { name: "Shantui", domain: "shantui.com" },
-  { name: "Mitsubishi", domain: "mitsubishi.com" },
-  { name: "Toyota", domain: "toyota.com" },
-  { name: "Isuzu", domain: "isuzu.co.jp" },
-  { name: "Hyundai", domain: "hyundai.com" },
-  { name: "BYD", domain: "byd.com" },
-  { name: "Iveco", domain: "iveco.com" },
+  { name: "XCMG", logo: "/images/partners/xcmg.png" },
+  { name: "Sinotruk", logo: "/images/partners/sinotruk.png" },
+  { name: "Shantui", logo: "/images/partners/shantui.png" },
+  { name: "Mitsubishi", logo: "/images/partners/mitsubishi.png" },
+  { name: "Toyota", logo: "/images/partners/toyota.png" },
+  { name: "Isuzu", logo: "/images/partners/isuzu.png" },
+  { name: "Hyundai", logo: "/images/partners/hyundai.png" },
+  { name: "BYD", logo: "/images/partners/byd.png" },
+  { name: "Iveco", logo: "/images/partners/iveco.png" },
 ];
 
 function PartnerCard({ partner }: { partner: (typeof partners)[0] }) {
-  const [imgError, setImgError] = useState(false);
-
   return (
     <div className="w-36 sm:w-44 h-28 sm:h-32 rounded-xl bg-white/95 backdrop-blur-sm border border-gray-200 hover:border-zk-gold hover:shadow-lg transition-all duration-300 flex flex-col items-center justify-center group hover:scale-105 p-3">
-      {!imgError ? (
-        <Image
-          src={`https://logo.clearbit.com/${partner.domain}`}
-          alt={`${partner.name} logo`}
-          width={120}
-          height={80}
-          unoptimized
-          className="object-contain max-h-[60px] w-auto h-auto"
-          onError={() => setImgError(true)}
-        />
-      ) : (
-        <span className="text-zk-green font-bold text-base">
-          {partner.name}
-        </span>
-      )}
+      <Image
+        src={partner.logo}
+        alt={`${partner.name} logo`}
+        width={120}
+        height={80}
+        className="object-contain max-h-[60px] w-auto h-auto"
+      />
       <span className="text-gray-500 text-xs mt-2 font-medium">
         {partner.name}
       </span>
