@@ -7,7 +7,6 @@ import {
   Factory,
   Fuel,
   ChevronRight,
-  ArrowRight,
 } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
@@ -458,22 +457,7 @@ export default function BusinessLinesSection() {
                   ))}
                 </div>
 
-                {/* Bottom CTA */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5, duration: 0.5 }}
-                  className="mt-10 text-center"
-                >
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-zk-green text-white rounded-full font-medium hover:bg-zk-green/90 transition-all duration-300 shadow-lg hover:shadow-xl group"
-                  >
-                    Inquire About {line.label}
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </a>
-                </motion.div>
+
               </TabsContent>
             ))}
           </Tabs>
