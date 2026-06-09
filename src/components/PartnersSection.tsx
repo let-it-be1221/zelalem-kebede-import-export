@@ -1,19 +1,48 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Handshake } from "lucide-react";
 
 const partners = [
-  { name: "XCMG", region: "China" },
-  { name: "Sinotruk", region: "China" },
-  { name: "Shantui", region: "China" },
-  { name: "Mitsubishi", region: "Japan" },
-  { name: "Toyota", region: "Japan" },
-  { name: "Isuzu", region: "Japan" },
-  { name: "Hyundai", region: "Korea" },
-  { name: "BYD", region: "China" },
-  { name: "Iveco", region: "Europe" },
+  { name: "XCMG", domain: "xcmg.com" },
+  { name: "Sinotruk", domain: "sinotruk.com" },
+  { name: "Shantui", domain: "shantui.com" },
+  { name: "Mitsubishi", domain: "mitsubishi.com" },
+  { name: "Toyota", domain: "toyota.com" },
+  { name: "Isuzu", domain: "isuzu.co.jp" },
+  { name: "Hyundai", domain: "hyundai.com" },
+  { name: "BYD", domain: "byd.com" },
+  { name: "Iveco", domain: "iveco.com" },
 ];
+
+function PartnerCard({ partner }: { partner: (typeof partners)[0] }) {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <div className="w-36 sm:w-44 h-28 sm:h-32 rounded-xl bg-white/95 backdrop-blur-sm border border-gray-200 hover:border-zk-gold hover:shadow-lg transition-all duration-300 flex flex-col items-center justify-center group hover:scale-105 p-3">
+      {!imgError ? (
+        <Image
+          src={`https://logo.clearbit.com/${partner.domain}`}
+          alt={`${partner.name} logo`}
+          width={120}
+          height={80}
+          unoptimized
+          className="object-contain max-h-[60px] w-auto h-auto"
+          onError={() => setImgError(true)}
+        />
+      ) : (
+        <span className="text-zk-green font-bold text-base">
+          {partner.name}
+        </span>
+      )}
+      <span className="text-gray-500 text-xs mt-2 font-medium">
+        {partner.name}
+      </span>
+    </div>
+  );
+}
 
 export default function PartnersSection() {
   return (
@@ -61,14 +90,7 @@ export default function PartnersSection() {
                   key={`${partner.name}-${i}`}
                   className="flex-shrink-0 mx-3 sm:mx-4"
                 >
-                  <div className="w-36 sm:w-44 h-20 sm:h-24 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 hover:border-zk-gold/40 hover:bg-white/15 transition-all duration-300 flex flex-col items-center justify-center group">
-                    <span className="text-white font-bold text-sm sm:text-base group-hover:text-zk-gold transition-colors">
-                      {partner.name}
-                    </span>
-                    <span className="text-white/40 text-xs mt-1">
-                      {partner.region}
-                    </span>
-                  </div>
+                  <PartnerCard partner={partner} />
                 </div>
               ))}
             </div>

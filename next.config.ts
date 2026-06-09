@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
   reactStrictMode: false,
   images: {
     qualities: [75, 90],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "logo.clearbit.com",
+      },
+    ],
   },
 };
 

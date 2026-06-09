@@ -154,14 +154,14 @@ export default function ContactSection() {
             >
               <Card className="overflow-hidden border-border/50 shadow-md">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.4!2d38.76!3d9.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sWelosefer%2C+Addis+Ababa!5e0!3m2!1sen!2set!4v1"
+                  src="https://www.google.com/maps?q=Zelalem+Kebede+Import+Export+Welosefer+Addis+Ababa+Ethiopia&output=embed"
                   width="100%"
-                  height="200"
+                  height="300"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Zelalem Kebede Office Location - Welosefer, Addis Ababa, Ethiopia"
+                  title="Zelalem Kebede General Import and Export Location"
                   className="w-full rounded-lg"
                 />
               </Card>
