@@ -157,3 +157,35 @@ html {
   background-color: #0D4B2A30;
   color: #0D4B2A;
 }
+
+.dark ::selection {
+  background-color: #C8A95130;
+  color: #C8A951;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: #C8A95140;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #C8A95180;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

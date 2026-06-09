@@ -144,7 +144,7 @@ export default function ContactSection() {
               </motion.div>
             ))}
 
-            {/* Map Placeholder */}
+            {/* Google Maps Embed */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -152,32 +152,18 @@ export default function ContactSection() {
               transition={{ duration: 0.6 }}
               className="mt-4"
             >
-              <Card className="overflow-hidden border-border/50">
-                <div className="relative h-48 bg-zk-green/10 flex items-center justify-center">
-                  <div className="text-center space-y-2">
-                    <MapPin className="w-8 h-8 text-zk-green mx-auto" />
-                    <p className="text-zk-green font-semibold text-sm">
-                      Addis Ababa, Ethiopia
-                    </p>
-                    <p className="text-muted-foreground text-xs">
-                      Kirkos Sub City, Woreda 03
-                    </p>
-                  </div>
-                  {/* Decorative grid */}
-                  <div
-                    className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage:
-                        "radial-gradient(circle at 1px 1px, #0D4B2A 1px, transparent 0)",
-                      backgroundSize: "20px 20px",
-                    }}
-                  />
-                  {/* Pulsing location dot */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div className="w-3 h-3 bg-zk-gold rounded-full animate-pulse" />
-                    <div className="absolute inset-0 w-3 h-3 bg-zk-gold/30 rounded-full animate-ping" />
-                  </div>
-                </div>
+              <Card className="overflow-hidden border-border/50 shadow-md">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.4!2d38.76!3d9.01!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sWelosefer%2C+Addis+Ababa!5e0!3m2!1sen!2set!4v1"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Zelalem Kebede Office Location - Welosefer, Addis Ababa, Ethiopia"
+                  className="w-full rounded-lg"
+                />
               </Card>
             </motion.div>
           </div>
